@@ -26,7 +26,7 @@ SECRET_KEY = '#yr$3#uhupj@l2!y@6w7xyam4_4q*6nnbq+$)5h3&#qw*0o+5-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['zac-django-todo.herokuapp.com']
+ALLOWED_HOSTS = [os.environ.get('HOSTNAME')]
 
 
 # Application definition
@@ -84,7 +84,7 @@ DATABASES = {
 }
 """
 
-DATABASES = {'default': dj_database_url.parse("postgres://nszhgmcriqjjoc:cf9e1da017bfc5d8f9f49775c54560eebc0f3af312cef1ecec509d0e72564d6a@ec2-54-217-243-19.eu-west-1.compute.amazonaws.com:5432/depdets0it19hj")}
+DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 
 
 # Password validation
